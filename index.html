@@ -4,15 +4,36 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>vue_basic</title>
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <link rel="stylesheet" href="style.css">
 
 </head>
 <body>
-    <input type="text" id="todoText"/>
-    <button id="addBtn">ekle</button>
-    <ul id="todoList"></ul>
+    <div id="app">
+   <h1>{{title}}</h1>
+   <p>{{content}}</p> 
+   <a 
+    v-bind:target="w3school.target"
+    v-bind:href="w3school.url" 
+    v-bind:alt="w3school.alt"
+    v-bind:w3school="workhard"
+    >
+    {{w3school.title}}</a>
+<br>
+<br>
+    <button v-on:click="changeTitle('first title')">change title 1...</button>
+    <button v-on:click="changeTitle('second title')">change title 2 ...</button>
+    <div 
+
+    @mousemove="updateCoords('mousemove',$event)" 
+
+    class="box" 
+    @click="changeTitle('works with box')">
+    </div>
+    <span>{{coords.x}},{{coords.y}}</span>
     
+</div>
 <script src="app.js"></script>
 </body>
 </html>
